@@ -38,7 +38,7 @@ public class JobSeekerApplyController {
         this.jobSeekerProfileService = jobSeekerProfileService;
     }
 
-    @GetMapping("job-details-apply/{id}")
+    @GetMapping("/job-details-apply/{id}")
     public String display(@PathVariable("id") int id, Model model) {
         JobPostActivity jobDetails = jobPostActivityService.getOne(id);
         List<JobSeekerApply> jobSeekerApplyList = jobSeekerApplyService.getJobCandidates(jobDetails);
@@ -81,7 +81,7 @@ public class JobSeekerApplyController {
         return "job-details";
     }
 
-    @PostMapping("job-details/apply/{id}")
+    @PostMapping("/job-details/apply/{id}")
     public String apply(@PathVariable("id") int id, JobSeekerApply jobSeekerApply) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (!(authentication instanceof AnonymousAuthenticationToken)) {

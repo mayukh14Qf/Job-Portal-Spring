@@ -161,7 +161,7 @@ public class JobPostActivityController {
         return "dashboard";
     }
 
-    @GetMapping("global-search/")
+    @GetMapping("/global-search/")
     public String globalSearch(Model model,
                                @RequestParam(value = "job", required = false) String job,
                                @RequestParam(value = "location", required = false) String location,
@@ -251,7 +251,7 @@ public class JobPostActivityController {
         return "redirect:/dashboard/";
     }
 
-    @GetMapping("dashboard/edit/{id}")
+    @GetMapping("/dashboard/edit/{id}")
     public String editJob(@PathVariable("id") int id, Model model) {
 
         JobPostActivity jobPostActivity = jobPostActivityService.getOne(id);

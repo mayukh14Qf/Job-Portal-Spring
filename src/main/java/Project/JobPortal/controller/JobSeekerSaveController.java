@@ -35,7 +35,7 @@ public class JobSeekerSaveController {
         this.jobSeekerSaveService = jobSeekerSaveService;
     }
 
-    @PostMapping("job-details/save/{id}")
+    @PostMapping("/job-details/save/{id}")
     public String save(@PathVariable("id") int id, JobSeekerSave jobSeekerSave) {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -55,7 +55,7 @@ public class JobSeekerSaveController {
         return "redirect:/dashboard/";
     }
 
-    @GetMapping("saved-jobs/")
+    @GetMapping("/saved-jobs/")
     public String savedJobs(Model model) {
 
         List<JobPostActivity> jobPost = new ArrayList<>();
